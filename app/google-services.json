@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "959435344522",
+    "firebase_url": "https://bohanee-jcp-hrai-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bohanee-jcp-hrai",
+    "storage_bucket": "bohanee-jcp-hrai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959435344522:android:9dc95a8b551e9fefc8fb73",
+        "android_client_info": {
+          "package_name": "jcp.hrai.bohanee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959435344522-45ruav3sisa0od76cu94ffdotp025li3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSP0CG6MRvYFe0kjThNFqze5v7gVw6s8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959435344522-45ruav3sisa0od76cu94ffdotp025li3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
