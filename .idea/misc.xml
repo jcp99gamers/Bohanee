@@ -3,12 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/Bohanee/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/Bohanee/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Android/Bohanee/app/src/main/res/layout/activity_phone_auth.xml" value="0.22826086956521738" />
         <entry key="..\:/Android/Bohanee/app/src/main/res/layout/fragment_billing.xml" value="0.176" />
         <entry key="..\:/Android/Bohanee/app/src/main/res/layout/fragment_billing_and_inventory.xml" value="0.2" />
         <entry key="..\:/Android/Bohanee/app/src/main/res/layout/fragment_camera.xml" value="0.20427350427350427" />
-        <entry key="..\:/Android/Bohanee/app/src/main/res/layout/fragment_inventory.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/Bohanee/app/src/main/res/layout/fragment_inventory.xml" value="0.29393753827311697" />
+        <entry key="..\:/Android/Bohanee/app/src/main/res/menu/top_nav__main_activity.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>

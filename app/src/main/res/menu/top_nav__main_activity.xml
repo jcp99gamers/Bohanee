@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_billing"
+        android:icon="@drawable/ic_billing_temp"
+        android:title="Billing" />
+    <item
+        android:id="@+id/nav_inventory"
+        android:icon="@drawable/ic_inventory_temp"
+        android:title="Inventory" />
+</menu>

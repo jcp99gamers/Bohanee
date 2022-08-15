@@ -22,11 +22,11 @@ import com.google.zxing.Result;
 
 public class CameraFragment extends Fragment {
     private CodeScanner mCodeScanner;
-    private CameraListener listener;
     private TextView editText;
+    private OnChildFragmentInteractionListener mParentListener;
 
-    public interface CameraListener {
-        void onInputSent(CharSequence input);
+    public interface OnChildFragmentInteractionListener {
+        void messageFromChildToParent(String myString);
     }
 
     @Nullable
@@ -43,54 +43,32 @@ public class CameraFragment extends Fragment {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        editText.setText(result.getText());
-                        Toast.makeText(activity, result.getText(), Toast.LENGTH_SHORT).show();
+                        //editText.setText(result.getText());
+                        mParentListener.messageFromChildToParent(result.getText().toString());
+                        //Toast.makeText(activity, result.getText(), Toast.LENGTH_SHORT).show();
                         mCodeScanner.startPreview();
                     }
                 });
             }
         });
-        editText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
-                /*CharSequence input = editText.getText();
-                listener.onInputSent(input);*/
-                listener.onInputSent(charSequence);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
         return v;
-    }
-
-    public void updateEditText(CharSequence newText) {
-        editText.setText(newText);
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof CameraListener) {
-            listener = (CameraListener) context;
+        // check if parent Fragment implements listener
+        if (getParentFragment() instanceof OnChildFragmentInteractionListener) {
+            mParentListener = (OnChildFragmentInteractionListener) getParentFragment();
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement FragmentAListener");
+            throw new RuntimeException("The parent fragment must implement OnChildFragmentInteractionListener");
         }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        listener = null;
+        mParentListener = null;
     }
 
     @Override

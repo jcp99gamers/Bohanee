@@ -11,67 +11,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01999998" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="405dp"
-        android:layout_height="49dp"
-        android:orientation="horizontal"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.050000012">
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button"
-            android:visibility="visible" />
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.0" />
 
     <FrameLayout
         android:id="@+id/fragmentContainerForCamera"
         android:layout_width="389dp"
         android:layout_height="289dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23"  />
+        app:layout_constraintVertical_bias="0.23" />
     <!--android:name="jcp.hrai.bohanee.Camera"-->
+
+    <!--android:name="jcp.hrai.bohanee.BillingFragment"-->
 
     <FrameLayout
         android:id="@+id/fragmentContainerMain"
-        android:layout_width="374dp"
-        android:layout_height="211dp"
+        android:layout_width="393dp"
+        android:layout_height="644dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.937" />
+        app:layout_constraintVertical_bias="0.95" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/TopNavView"
+        android:layout_width="390dp"
+        android:layout_height="54dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.00999999"
+        app:menu="@menu/top_nav__main_activity" />
+
     <!--android:name="jcp.hrai.bohanee.BillingFragment"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
