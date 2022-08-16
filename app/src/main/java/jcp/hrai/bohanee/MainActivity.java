@@ -67,3 +67,15 @@ public class MainActivity extends AppCompatActivity{
                 }
             };
 }
+class Data{
+    String pID;
+    int QTY;
+    int amt;
+    String UPCData;
+    public Data(String Pid, int Amt, int Qty, String UpcData) {
+        this.pID = Pid;
+        this.amt = Amt;
+        this.QTY = Qty;
+        this.UPCData = UpcData;
+    }
+}
