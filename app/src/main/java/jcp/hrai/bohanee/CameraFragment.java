@@ -2,9 +2,11 @@ package jcp.hrai.bohanee;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +22,18 @@ import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
 import com.google.zxing.Result;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
+import java.io.IOException;
+
 public class CameraFragment extends Fragment {
     private CodeScanner mCodeScanner;
     private TextView editText;
     private OnChildFragmentInteractionListener mParentListener;
+    String url ="https://upcdatabase.com/item/";
+    public String URL;
 
     public interface OnChildFragmentInteractionListener {
         void messageFromChildToParent(String myString);
@@ -43,15 +53,45 @@ public class CameraFragment extends Fragment {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        //editText.setText(result.getText());
-                        mParentListener.messageFromChildToParent(result.getText().toString());
-                        //Toast.makeText(activity, result.getText(), Toast.LENGTH_SHORT).show();
+                        Log.v("JCPNoNoob",result.getText().toString());
+                        URL = url + result.getText().toString();
+                        new JSoupInBackground().execute();
                         mCodeScanner.startPreview();
                     }
                 });
             }
         });
         return v;
+    }
+
+    //JSoup
+    public class JSoupInBackground extends AsyncTask<Void,Void,Void> {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                Document document = Jsoup.connect(URL).timeout(30 * 1000).get();
+                Element element = document.select("table").first();
+                for (Element tr : element.select("tr")) {
+                    int i = 0;
+                    for (Element td : element.select("td")) {
+                        if (td.text().equals("Description")) {
+                            i = 98;
+                        }
+                        if (i == 100) {
+                            Log.d("Description","= "+td.text()+"");//DoneInBackground
+                            mParentListener.messageFromChildToParent(td.text()+"");
+                        }
+                        i = i + 1;
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(getContext(),e+"",Toast.LENGTH_SHORT).show();
+                //mParentListener.messageFromChildToParent(URL);
+            }
+            //mCodeScanner.startPreview();
+            return null;
+        }
     }
 
     @Override

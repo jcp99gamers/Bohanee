@@ -3,6 +3,7 @@ package jcp.hrai.bohanee;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.jsoup.Jsoup;
 
 public class BillingFragment extends Fragment implements CameraFragment.OnChildFragmentInteractionListener {
     private OnFragmentInteractionListener mListener;
@@ -52,7 +55,6 @@ public class BillingFragment extends Fragment implements CameraFragment.OnChildF
         testAdapter = new DataAdapter();
         recyclerView.setAdapter(testAdapter);
         int count = cr.getCount();  //int count = DatabaseUtils.queryNumEntries(db, "transactionhistory");
-        Log.v("SQLData", count+"");
         String AddData = "insert into bills values('"+"NameData"+"','"+100+"','"+1+"','"+"RawUPC"+"')";
         db.execSQL(AddData);
         Log.v("SQLData", count+"");
