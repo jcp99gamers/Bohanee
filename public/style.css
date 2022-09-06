@@ -1,0 +1,106 @@
+body {
+	width: auto;
+	overflow-x: hidden;
+	background-color: #f2f2f2;
+	position: relative;
+	height: 100%;
+}
+
+#navbarScroll a {
+	width: 100%;
+	font-family: "Merienda One";
+	transition: all 0.3s ease;
+	font-weight: 900;
+}
+#navbarScroll a:hover {
+	color: #ffc857;
+}
+
+.navbar-brand {
+	margin-left: 10px;
+}
+
+.navbar-dark .navbar-toggler {
+	border: none;
+}
+
+.navbar-nav a {
+	color: #fff;
+	font-weight: 600;
+}
+
+.nnavbar-nav span {
+	color: crimson;
+	transition: all 0.3s ease;
+}
+
+.bg-custom {
+	background-color: #e22030;
+}
+
+.navbar-nav button {
+	border: none;
+	background-color: #000;
+	color: #fff;
+	font-weight: 600;
+	border-radius: 5px;
+	padding: 5px 10px;
+	transition: all 0.3s ease;
+	margin-top: 5px;
+	float: left;
+}
+
+
+#section1 .container-fluid {
+	margin: 100px 25px 0px 50px;
+}
+
+#section1 .row {
+	color: black;
+}
+#section2 {
+	height: 100%;
+	width: 100%;
+	color: gray;
+}
+
+#section3 {
+	height: 100%;
+	width: 100%;
+	color: gray;
+}
+
+#section3 form {
+	border: 2px solid #ccc;
+	padding: 10px;
+	background-color: #ccc;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+}
+
+@media screen and (max-width: 650px) {
+	#section4 img {
+		height: 350px;
+		margin-left: 30px;
+	}
+	#section4 #b {
+		display: block;
+		margin-bottom: 20px;
+	}
+	#section4 #a {
+		display: none;
+	}
+	#section5 .row {
+		padding: 5px;
+		margin-left: 0%;
+		width: 90%;
+	}
+	#section5 .column {
+		width: 100%;
+		margin: 20px;
+		display: block;
+	}
+}
