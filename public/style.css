@@ -50,9 +50,14 @@ body {
 	float: left;
 }
 
-
 #section1 .container-fluid {
-	margin: 100px 25px 0px 50px;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
 }
 
 #section1 .row {
@@ -70,37 +75,10 @@ body {
 	color: gray;
 }
 
-#section3 form {
+.form {
 	border: 2px solid #ccc;
 	padding: 10px;
 	background-color: #ccc;
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
-}
-
-@media screen and (max-width: 650px) {
-	#section4 img {
-		height: 350px;
-		margin-left: 30px;
-	}
-	#section4 #b {
-		display: block;
-		margin-bottom: 20px;
-	}
-	#section4 #a {
-		display: none;
-	}
-	#section5 .row {
-		padding: 5px;
-		margin-left: 0%;
-		width: 90%;
-	}
-	#section5 .column {
-		width: 100%;
-		margin: 20px;
-		display: block;
-	}
+	margin: 0 auto;
+	width: 53%;
 }
