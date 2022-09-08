@@ -82,3 +82,11 @@ h1 {
 	margin: 0 auto;
 	width: 53%;
 }
+
+#section3 .form{
+	border: 2px solid #ccc;
+	padding: 10px;
+	background-color: #ccc;
+	margin: 0 auto;
+	width: 90%;
+}
