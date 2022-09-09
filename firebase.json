@@ -1,6 +1,6 @@
 {
 	"hosting": {
-		"site": "bohanee.in",
+		"site": "",
 		"public": "public",
 		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
 	}
