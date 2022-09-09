@@ -1,5 +1,6 @@
 {
   "hosting": {
+	"site" : "bohanee-jcp-hrai",
     "public": "public",
     "ignore": [
       "firebase.json",
