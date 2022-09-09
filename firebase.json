@@ -1,11 +1,7 @@
 {
-  "hosting": {
-	"site" : "bohanee-mobile",
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  }
+	"hosting": {
+		"site": "bohanee-mobile",
+		"public": "public",
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+	}
 }
