@@ -147,7 +147,7 @@
 		</script>
 		<script type="module">
 			import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
-			//import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+			import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
 			const firebaseConfig = {
 				apiKey: "AIzaSyBH9mHNF4p50d8OxW6MfyNTZbudnK7-piA",
 				authDomain: "bohanee-jcp-hrai.firebaseapp.com",
@@ -156,11 +156,11 @@
 				storageBucket: "bohanee-jcp-hrai.appspot.com",
 				messagingSenderId: "959435344522",
 				appId: "1:959435344522:web:4b2a55cddc7c35f1c8fb73",
-				measurementId: "G-MPYCFWK5WG"
+				measurementId: "G-PRJPFCDZ66"
 			};
 			const app = initializeApp(firebaseConfig);
-			//const analytics = getAnalytics(app);
-</script>
+			const analytics = getAnalytics(app);
+		</script>
 		</script>
 	</body>
 </html>
