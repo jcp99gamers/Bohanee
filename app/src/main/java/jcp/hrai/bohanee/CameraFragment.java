@@ -33,10 +33,10 @@ public class CameraFragment extends Fragment {
     private TextView editText;
     private OnChildFragmentInteractionListener mParentListener;
     String url ="https://upcdatabase.com/item/";
-    public String URL;
+    public String URL, UPC;
 
     public interface OnChildFragmentInteractionListener {
-        void messageFromChildToParent(String myString);
+        void messageFromChildToParent(String stringUPC, String stringRAW);
     }
 
     @Nullable
@@ -53,9 +53,12 @@ public class CameraFragment extends Fragment {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Log.v("JCPNoNoob",result.getText().toString());
-                        URL = url + result.getText().toString();
+                        UPC = result.getText().toString();
+                        Log.v("Dez1","= "+UPC+"");
+                        URL = url + UPC;
+                        Log.v("Dez2","= "+URL+"");
                         new JSoupInBackground().execute();
+                        Log.v("Dez7","Continue");
                         mCodeScanner.startPreview();
                     }
                 });
@@ -78,14 +81,17 @@ public class CameraFragment extends Fragment {
                             i = 98;
                         }
                         if (i == 100) {
-                            Log.d("Description","= "+td.text()+"");//DoneInBackground
-                            mParentListener.messageFromChildToParent(td.text()+"");
+                            Log.v("Dez3"," -> "+td.text()+","+UPC+"");//DoneInBackground
+                            mParentListener.messageFromChildToParent(td.text().toString()+"",UPC+"");
+                            Log.v("Dez6"," Changed to C ");
+                            break;
                         }
                         i = i + 1;
                     }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+                Log.v("DezERROR",""+e+"");//DoneInBackground
                 Toast.makeText(getContext(),e+"",Toast.LENGTH_SHORT).show();
                 //mParentListener.messageFromChildToParent(URL);
             }

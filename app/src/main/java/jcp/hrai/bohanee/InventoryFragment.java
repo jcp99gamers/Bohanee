@@ -18,6 +18,13 @@ public class InventoryFragment extends Fragment implements CameraFragment.OnChil
     FragmentTransaction fragmentTransactionI;
     private TextView editText;
 
+    @Override
+    public void messageFromChildToParent(String stringUPC, String stringRAW) {
+        Log.v("Dez4"," Changed to I.");
+        //Log.v("TAG", myString);
+        editText.setText(stringUPC);
+    }
+
     public interface OnFragmentInteractionListener {
         void messageFromParentFragmentToActivity(String myString);
     }
@@ -32,12 +39,6 @@ public class InventoryFragment extends Fragment implements CameraFragment.OnChil
         fragmentTransactionI.replace(R.id.fragmentContainerForCameraI, cameraFragmentI);
         fragmentTransactionI.commit();*/
         return v;
-    }
-
-    @Override
-    public void messageFromChildToParent(String myString) {
-        //Log.v("TAG", myString);
-        editText.setText(myString);
     }
 
     @Override

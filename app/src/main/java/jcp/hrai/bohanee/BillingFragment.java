@@ -1,5 +1,6 @@
 package jcp.hrai.bohanee;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -22,7 +23,7 @@ import org.jsoup.Jsoup;
 public class BillingFragment extends Fragment implements CameraFragment.OnChildFragmentInteractionListener {
     private OnFragmentInteractionListener mListener;
     FragmentTransaction fragmentTransactionB;
-    SQLiteDatabase db;
+    private SQLiteDatabase db;
     Cursor cr;
     private TextView editText;
     String Pid, UpcData;
@@ -30,6 +31,36 @@ public class BillingFragment extends Fragment implements CameraFragment.OnChildF
     private RecyclerView recyclerView;
     private DataAdapter testAdapter;
     Data[] data;
+
+    @Override
+    public void messageFromChildToParent(String stringUPC, String stringRAW) {
+        Log.v("Dez4"," Changed to B.");
+        //Log.v("TAG", myString);
+        //editText.setText(myString);
+        db.execSQL("Create Table If Not Exists bills(data Varchar, amt Int, qty Int,raw Varchar);");
+        //db.execSQL("Create Table If Not Exists billTemp(Data Varchar, Amt Int, Qty Int,Raw Varchar);");
+        boolean checkers;
+        String querySPECIFIC = "select * from bills where raw ="+stringRAW+"";
+        cr = db.rawQuery(querySPECIFIC, null);
+        Log.v("Dez"," CF");
+        if(cr.getCount() <= 0){
+            checkers = false;
+        }
+        else{
+            checkers = true;
+        }
+        if (checkers){
+            cr.moveToFirst();
+            int QTY = cr.getInt(2);
+            String UpdatesIfExists = "UPDATE bills SET qty = "+(QTY+1)+" WHERE raw = "+stringRAW+";";
+            db.execSQL(UpdatesIfExists);
+        }
+        else{
+            String AddData = "insert into bills values('"+stringUPC+"','"+100+"','"+1+"','"+stringRAW+"')";
+            db.execSQL(AddData);
+        }
+    }
+
     public interface OnFragmentInteractionListener {
         void messageFromParentFragmentToActivity(String myString);
     }
@@ -46,7 +77,7 @@ public class BillingFragment extends Fragment implements CameraFragment.OnChildF
         View v = inflater.inflate(R.layout.fragment_billing, container, false);
         //editText = v.findViewById(R.id.CameraDataBilling);
         // db = openOrCreateDatabase("DATABASE",android.content.Context.MODE_PRIVATE ,null);
-        db.execSQL("Create Table If Not Exists Bills(data Varchar, amt Int, qty Int,raw Varchar);");
+        db.execSQL("Create Table If Not Exists bills(data Varchar, amt Int, qty Int,raw Varchar);");
         String queryB = "select * from bills";
         cr = db.rawQuery(queryB, null);
         // String newdata = "insert into transactionhistory values('JCP',1,'dd/mm/yy','cate')";
@@ -54,9 +85,9 @@ public class BillingFragment extends Fragment implements CameraFragment.OnChildF
         recyclerView = v.findViewById(R.id.recycler_view);
         testAdapter = new DataAdapter();
         recyclerView.setAdapter(testAdapter);
+        /*String AddData = "insert into bills values('"+"NameData"+"','"+100+"','"+1+"','"+"RawUPC"+"')";
+        db.execSQL(AddData);*/
         int count = cr.getCount();  //int count = DatabaseUtils.queryNumEntries(db, "transactionhistory");
-        String AddData = "insert into bills values('"+"NameData"+"','"+100+"','"+1+"','"+"RawUPC"+"')";
-        db.execSQL(AddData);
         Log.v("SQLData", count+"");
         data = new Data[count];//data = new Data[10];
         /*cr.moveToFirst();
@@ -77,21 +108,6 @@ public class BillingFragment extends Fragment implements CameraFragment.OnChildF
             data[i] = new Data(Pid, Amt, Qty, UpcData);
             i++;
         }
-        /*
-        Pid = "Name";
-        Amt = 20;
-        Qty = 19;
-        UpcData = "UPC Label";
-        data[0] = new Data(Pid, Amt, Qty, UpcData);
-        data[1] = new Data(Pid, Amt, Qty, UpcData);
-        data[2] = new Data(Pid, Amt, Qty, UpcData);
-        data[3] = new Data(Pid, Amt, Qty, UpcData);
-        data[4] = new Data(Pid, Amt, Qty, UpcData);
-        data[5] = new Data(Pid, Amt, Qty, UpcData);
-        data[6] = new Data(Pid, Amt, Qty, UpcData);
-        data[7] = new Data(Pid, Amt, Qty, UpcData);
-        data[8] = new Data(Pid, Amt, Qty, UpcData);
-        data[9] = new Data(Pid, Amt, Qty, UpcData);*/
         testAdapter.setListdata(data);
         testAdapter.notifyDataSetChanged();
         return v;
@@ -113,11 +129,5 @@ public class BillingFragment extends Fragment implements CameraFragment.OnChildF
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
-
-    @Override
-    public void messageFromChildToParent(String myString) {
-        //Log.v("TAG", myString);
-        //editText.setText(myString);
     }
 }
