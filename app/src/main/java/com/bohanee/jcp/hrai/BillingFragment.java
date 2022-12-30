@@ -15,9 +15,10 @@ import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-public class BillingFragment extends Fragment {
+public class BillingFragment extends Fragment implements CameraFragment.OnChildFragmentInteractionListener {
 
-
+    private OnFragmentInteractionListener mListener;
+    FragmentTransaction fragmentTransactionB;
     private Button cancelButton,proceedButton,fastForwardButton;
     private EditText discountAmtEdt, discountPercentEdt;
 
@@ -123,5 +124,32 @@ public class BillingFragment extends Fragment {
 
 
         return view;
+    }
+
+    @Override
+    public void messageFromChildToParent(String stringUPC, String stringRAW) {
+
+    }
+
+    public interface OnFragmentInteractionListener {
+        void messageFromParentFragmentToActivity(String myString);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        Fragment childFragment = new CameraFragment();
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainerForCameraBILLING, childFragment).commit();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
     }
 }

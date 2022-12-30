@@ -7,13 +7,21 @@
     android:layout_height="match_parent"
     tools:context=".BarcodeItemsFragment">
 
+    <FrameLayout
+        android:id="@+id/fragmentContainerForCameraBARCODE"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/cam_imgview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:src="@drawable/camera_1"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -62,7 +70,7 @@
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/cam_imgview"
         app:layout_constraintStart_toStartOf="@+id/cam_imgview"
         app:layout_constraintTop_toBottomOf="@+id/cam_imgview" />
@@ -71,13 +79,13 @@
         android:id="@+id/cam_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
         android:minHeight="48dp"
         android:text="Camera"
         android:thumb="@drawable/custom_thumb"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tap_to_scan_tv"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerForCameraBARCODE"
         app:switchPadding="10dp"
         app:track="@drawable/custom_track" />
 
@@ -111,12 +119,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="60dp"
         android:text="CP"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/item_count_tv"
-        app:layout_constraintTop_toBottomOf="@+id/tap_to_scan_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerForCameraBARCODE" />
 
     <TextView
         android:id="@+id/barcode_sp_tv"

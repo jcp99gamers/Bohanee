@@ -1,5 +1,6 @@
 package com.bohanee.jcp.hrai;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,7 +18,10 @@ import com.bohanee.jcp.hrai.database.Product;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BarcodeItemsFragment extends Fragment {
+public class BarcodeItemsFragment extends Fragment implements CameraFragment.OnChildFragmentInteractionListener {
+
+    private OnFragmentInteractionListener MListener;
+    FragmentTransaction fragmentTransactionB;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,5 +69,32 @@ public class BarcodeItemsFragment extends Fragment {
         BarcodeAdapter barcodeAdapter = new BarcodeAdapter(productList);
         recyclerView.setAdapter(barcodeAdapter);
         return view;
+    }
+
+    @Override
+    public void messageFromChildToParent(String stringUPC, String stringRAW) {
+
+    }
+
+    public interface OnFragmentInteractionListener {
+        void messageFromParentFragmentToActivity(String myString);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        Fragment childFragment = new CameraFragment();
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainerForCameraBARCODE, childFragment).commit();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        MListener = null;
     }
 }

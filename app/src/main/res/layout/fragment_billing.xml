@@ -15,12 +15,10 @@
         tools:context=".BillingFragment">
 
         <FrameLayout
-            android:id="@+id/fragmentContainerForCameraB"
-            android:layout_width="275dp"
-            android:layout_height="275dp"
-            android:visibility="gone"
+            android:id="@+id/fragmentContainerForCameraBILLING"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,13 +26,27 @@
             android:id="@+id/cam_imgview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/camera_1"
             android:layout_marginTop="90dp"
-            android:visibility="visible"
+            android:src="@drawable/camera_1"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tap_to_scan_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif"
+            android:text="Tap to scan"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cam_imgview" />
 
         <EditText
             android:id="@+id/add_upc_edt"
@@ -85,30 +97,16 @@
             app:track="@drawable/custom_track" />
 
         <TextView
-            android:id="@+id/tap_to_scan_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:fontFamily="sans-serif"
-            android:text="Tap to scan"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cam_imgview" />
-
-        <TextView
             android:id="@+id/tv_product_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="123dp"
+            android:layout_marginTop="100dp"
             android:text="Product List"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tap_to_scan_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/fragmentContainerForCameraBILLING" />
 
         <LinearLayout
             android:id="@+id/list_heading"
