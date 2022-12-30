@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BarcodeItemsFragment">
+
+    <ImageView
+        android:id="@+id/cam_imgview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/camera_1"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/add_upc_edt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="104dp"
+        android:background="@drawable/grey_rounded_edittext"
+        android:ems="10"
+        android:hint="Add UPC number"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:padding="6dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/add_img_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/add_img_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="@color/bohanee_red_3"
+        android:contentDescription="Add current UPC number"
+        android:minHeight="48dp"
+        android:src="@drawable/ic_baseline_add_24"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cam_imgview"
+        app:layout_constraintTop_toTopOf="@id/add_upc_edt" />
+
+    <TextView
+        android:id="@+id/tap_to_scan_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="Tap to scan"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/cam_imgview"
+        app:layout_constraintStart_toStartOf="@+id/cam_imgview"
+        app:layout_constraintTop_toBottomOf="@+id/cam_imgview" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/cam_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="16dp"
+        android:minHeight="48dp"
+        android:text="Camera"
+        android:thumb="@drawable/custom_thumb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tap_to_scan_tv"
+        app:switchPadding="10dp"
+        app:track="@drawable/custom_track" />
+
+    <TextView
+        android:id="@+id/barcode_pr_name_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:text="Product name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/item_count_tv" />
+
+    <TextView
+        android:id="@+id/item_count_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="ItemCount"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/barcode_pr_name_tv"
+        app:layout_constraintTop_toTopOf="@+id/barcode_cp_tv" />
+
+    <TextView
+        android:id="@+id/barcode_cp_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="75dp"
+        android:text="CP"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/item_count_tv"
+        app:layout_constraintTop_toBottomOf="@+id/tap_to_scan_tv" />
+
+    <TextView
+        android:id="@+id/barcode_sp_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="SP"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/barcode_cp_tv"
+        app:layout_constraintTop_toTopOf="@+id/barcode_cp_tv" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/barcode_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/barcode_add_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cam_switch"
+        tools:listitem="@layout/list_item_barcode_items">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/barcode_add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:text="Add"
+        android:background="@drawable/bohanee_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

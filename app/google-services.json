@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "959435344522",
+    "firebase_url": "https://bohanee-jcp-hrai-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bohanee-jcp-hrai",
+    "storage_bucket": "bohanee-jcp-hrai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959435344522:android:36a338af048d920dc8fb73",
+        "android_client_info": {
+          "package_name": "com.bohanee.jcp.hrai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959435344522-sr2q0qejk2b42ckm1v8t8gci27oh8njp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bohanee.jcp.hrai",
+            "certificate_hash": "a42c968d642fdce856a30ad8456f51ced6910ce4"
+          }
+        },
+        {
+          "client_id": "959435344522-45ruav3sisa0od76cu94ffdotp025li3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSP0CG6MRvYFe0kjThNFqze5v7gVw6s8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959435344522-45ruav3sisa0od76cu94ffdotp025li3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959435344522:android:0fdc7bd257a0e059c8fb73",
+        "android_client_info": {
+          "package_name": "com.raj.shivanshu.bohaneeparts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959435344522-0j4svq2niani56oim6p29j2c4hmmd37u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.raj.shivanshu.bohaneeparts",
+            "certificate_hash": "d2ad883beebe1f47607c04556e3acd9ef3e2c31d"
+          }
+        },
+        {
+          "client_id": "959435344522-45ruav3sisa0od76cu94ffdotp025li3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSP0CG6MRvYFe0kjThNFqze5v7gVw6s8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959435344522-45ruav3sisa0od76cu94ffdotp025li3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959435344522:android:9dc95a8b551e9fefc8fb73",
+        "android_client_info": {
+          "package_name": "jcp.hrai.bohanee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959435344522-6e0kkp2rf745lrqherbg4t3p0ika7drr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jcp.hrai.bohanee",
+            "certificate_hash": "e84d69bde32de66592b31c6d8bca83a060b45d54"
+          }
+        },
+        {
+          "client_id": "959435344522-45ruav3sisa0od76cu94ffdotp025li3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSP0CG6MRvYFe0kjThNFqze5v7gVw6s8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959435344522-45ruav3sisa0od76cu94ffdotp025li3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

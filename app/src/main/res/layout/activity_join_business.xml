@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JoinBusinessActivity">
+
+    <ImageView
+        android:id="@+id/setup_biz_imgv"
+        android:layout_width="235dp"
+        android:layout_height="215dp"
+        android:layout_marginTop="144dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bohanee_logo" />
+
+    <Button
+        android:id="@+id/pending_approvals_btn"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#fff"
+        android:text="Setup Business"
+        android:textAllCaps="false"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setup_biz_imgv" />
+
+    <Button
+        android:id="@+id/multi_store_btn"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="34dp"
+        android:backgroundTint="#fff"
+        android:text="Join A Business"
+        android:textAllCaps="false"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pending_approvals_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

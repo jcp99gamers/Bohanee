@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OTPActivity">
+
+    <TextView
+        android:id="@+id/verification_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Verification"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/otp_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verification_tv"
+        app:srcCompat="@drawable/otp_img" />
+
+    <TextView
+        android:id="@+id/enter_otp_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:text="Enter OTP sent on the Phone \n Number"
+        android:textColor="#323031"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_img" />
+
+    <EditText
+        android:id="@+id/otp_edittext1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="28dp"
+        android:background="@drawable/red_rounded_edittext"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/otp_edittext2" />
+
+    <EditText
+        android:id="@+id/otp_edittext2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/red_rounded_edittext"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/otp_edittext1"
+        app:layout_constraintTop_toTopOf="@+id/otp_edittext3" />
+
+    <EditText
+        android:id="@+id/otp_edittext3"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/red_rounded_edittext"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/otp_edittext2"
+        app:layout_constraintTop_toBottomOf="@+id/enter_otp_tv" />
+
+    <EditText
+        android:id="@+id/otp_edittext4"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/red_rounded_edittext"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/otp_edittext3"
+        app:layout_constraintTop_toTopOf="@+id/otp_edittext3" />
+
+    <EditText
+        android:id="@+id/otp_edittext5"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/red_rounded_edittext"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/otp_edittext4"
+        app:layout_constraintTop_toTopOf="@+id/otp_edittext4" />
+
+    <EditText
+        android:id="@+id/otp_edittext6"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/red_rounded_edittext"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/otp_edittext5"
+        app:layout_constraintTop_toTopOf="@+id/otp_edittext5" />
+
+    <ImageView
+        android:id="@+id/loading_img"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/waiting_tv"
+        app:layout_constraintStart_toStartOf="@+id/enter_otp_tv"
+        app:layout_constraintTop_toTopOf="@+id/waiting_tv"
+        tools:srcCompat="@drawable/loading" />
+
+    <TextView
+        android:id="@+id/waiting_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Waiting for OTP"
+        android:textColor="#817272"
+        app:layout_constraintEnd_toEndOf="@+id/enter_otp_tv"
+        app:layout_constraintStart_toStartOf="@+id/enter_otp_tv"
+        app:layout_constraintTop_toBottomOf="@+id/enter_otp_tv" />
+
+    <Button
+        android:id="@+id/verify_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:text="verify"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waiting_tv" />
+</androidx.constraintlayout.widget.ConstraintLayout>

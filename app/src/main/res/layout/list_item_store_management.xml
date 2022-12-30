@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="12dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/product_name_tv"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceListItem"
+            tools:text="Snickers" />
+
+        <TextView
+            android:id="@+id/qty_x_price_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total value" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/qty_tv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="2" />
+
+    <TextView
+        android:id="@+id/store_man_cp_tv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="₹ 20" />
+
+    <TextView
+        android:id="@+id/store_man_sp_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="end"
+        tools:text="₹ 40" />
+</LinearLayout>

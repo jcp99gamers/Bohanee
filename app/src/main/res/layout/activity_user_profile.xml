@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfileActivity">
+
+    <TextView
+        android:id="@+id/user_profile_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Profile"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/up_biz_code_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Business code"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/user_profile_tv"
+        app:layout_constraintTop_toBottomOf="@+id/user_profile_tv" />
+
+    <TextView
+        android:id="@+id/up_biz_code_val_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        app:layout_constraintStart_toStartOf="@+id/up_biz_code_tv"
+        app:layout_constraintTop_toBottomOf="@+id/up_biz_code_tv"
+        tools:text="320498309" />
+
+    <TextView
+        android:id="@+id/up_store_code_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Store code"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/up_biz_code_val_tv"
+        app:layout_constraintTop_toBottomOf="@+id/up_biz_code_val_tv" />
+
+    <TextView
+        android:id="@+id/up_store_code_val_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        app:layout_constraintStart_toStartOf="@+id/up_store_code_tv"
+        app:layout_constraintTop_toBottomOf="@+id/up_store_code_tv"
+        tools:text="43230942" />
+
+    <TextView
+        android:id="@+id/up_name_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/up_store_code_val_tv"
+        app:layout_constraintTop_toBottomOf="@+id/up_store_code_val_tv" />
+
+    <TextView
+        android:id="@+id/up_name_val_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        app:layout_constraintStart_toStartOf="@+id/up_name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/up_name_tv"
+        tools:text="Shivanshu Raj" />
+
+    <TextView
+        android:id="@+id/up_ph_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Phone number"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/up_name_val_tv"
+        app:layout_constraintTop_toBottomOf="@+id/up_name_val_tv" />
+
+    <TextView
+        android:id="@+id/up_ph_val_tv"
+        style="@style/BohaneeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        app:layout_constraintStart_toStartOf="@+id/up_ph_tv"
+        app:layout_constraintTop_toBottomOf="@+id/up_ph_tv"
+        tools:text="9912345678" />
+
+    <TextView
+        android:id="@+id/up_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Email"
+        app:layout_constraintStart_toStartOf="@+id/up_ph_val_tv"
+        app:layout_constraintTop_toBottomOf="@id/up_ph_val_tv" />
+
+    <EditText
+        android:id="@+id/up_email_val_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/up_email"
+        app:layout_constraintTop_toBottomOf="@+id/up_email"
+        tools:text="bohaneerocks@gmail.com" />
+
+    <Button
+        android:id="@+id/verify_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Out  →"
+        android:background="@drawable/bohanee_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="522dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
